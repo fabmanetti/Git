@@ -6,7 +6,7 @@
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 18:32:30 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/07 14:34:24 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/07 16:05:47 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int		main(int argc, char**argv)
 {
 	argc = 0;
-	printf("%d\n", ft_strncmp(argv[1], argv[2], 4));
-	printf("%d\n", strncmp(argv[1], argv[2], 4));
+	printf("%ld\n", ft_strlcpy(argv[1], argv[2], 4));
+	printf("%ld\n", strlcpy(argv[1], argv[2], 4));
 	return (0);
 }
