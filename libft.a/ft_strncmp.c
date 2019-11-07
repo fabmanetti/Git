@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 18:15:22 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/07 13:04:20 by fmanetti         ###   ########.fr       */
+/*   Created: 2019/11/07 13:02:34 by fmanetti          #+#    #+#             */
+/*   Updated: 2019/11/07 14:49:35 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int		ft_strlen(const char *s);
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-char*	ft_strchr(const char *s, int c);
-char*	ft_strrchr(const char *s, int c);
-int		ft_strncmp(const char *s1, const char *s2, int n);
+int		ft_strncmp(const char *s1, const char *s2, int n)
+{
+	int i;
+
+	i = 0;
+	while ((s1[i] != '\0' && s2[i] != '\0') && s1[i] == s2[i] && i < n--)
+		i++;
+		if (s1[i] < s2[i] && s1[i] != s2[i])
+		return (s1[i] - s2[i]);
+	else if (s1[i] > s2[i] && s1[i] != s2[i])
+		return (s1[i] - s2[i]);
+	return (0);
+}

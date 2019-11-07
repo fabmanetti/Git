@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 18:15:22 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/07 13:04:20 by fmanetti         ###   ########.fr       */
+/*   Created: 2019/11/07 10:44:38 by fmanetti          #+#    #+#             */
+/*   Updated: 2019/11/07 12:22:17 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int		ft_strlen(const char *s);
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-char*	ft_strchr(const char *s, int c);
-char*	ft_strrchr(const char *s, int c);
-int		ft_strncmp(const char *s1, const char *s2, int n);
+char*	ft_strrchr(const char *s, int c)
+{
+	int i;
+	int d;
+	char x;
+
+	i = 0;
+	d = 0;
+	x = (char)c;
+	while (s[i])
+	{
+		if (s[i] == x)
+			d = i;
+		i++;
+	}
+	if (d != 0)
+		return((char*)&s[d]);
+	return (0);
+}
