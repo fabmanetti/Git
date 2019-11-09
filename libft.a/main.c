@@ -18,7 +18,7 @@
 int		main(int argc, char**argv)
 {
 	argc = 0;
-	printf("%ld\n", ft_strlcat(argv[1], argv[2], atoi(argv[3])));
+	printf("%d\n", ft_strlcat(argv[1], argv[2], atoi(argv[3])));
 	printf("%ld\n", strlcat(argv[1], argv[2], atoi(argv[3])));
 	return (0);
 }

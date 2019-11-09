@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-long	ft_strlcat(char *dst, const char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size)
 {
 	unsigned int x;
 	unsigned int y;
@@ -30,7 +30,7 @@ long	ft_strlcat(char *dst, const char *src, unsigned int size)
 			x++;
 			y++;
 		}
-		dst[x + 1] = '\0';
+		dst[x] = '\0';
 	}
 	printf("%s\n", dst);
 	return (ft_strlen(dst));
