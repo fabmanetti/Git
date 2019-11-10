@@ -20,18 +20,20 @@ unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size)
 
 	x = 0;
 	y = 0;
-	if (size != 0)
+	while (dst[x] != '\0')
+		x++;
+	if (x < size)
 	{
-		while (dst[x] != '\0')
-			x++;
-		while (src[y] != '\0' && y < size)
+		while (src[y] != '\0' && x < size)
 		{
 			dst[x] = src[y];
 			x++;
 			y++;
 		}
 		dst[x] = '\0';
+		printf("%s\n", dst);
+		return (ft_strlen(dst));
 	}
-	printf("%s\n", dst);
-	return (ft_strlen(dst));
+	else
+		return (size + ft_strlen(src));
 }
