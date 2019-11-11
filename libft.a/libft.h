@@ -25,4 +25,4 @@ int		ft_strncmp(const char *s1, const char *s2, int n);
 long	ft_strlcpy(char *dst, const char *src, unsigned int size);
 unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size);
 char*	ft_strnstr(const char *s1, const char *s2, unsigned int len);
-
+int		ft_atoi(const char *s);
