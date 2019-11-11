@@ -6,7 +6,7 @@
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 13:40:12 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/11 13:40:15 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/11 19:15:26 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,9 @@ int		ft_atoi(const char *s)
 		res *= 10;
 		res += (int)s[x] - '0';
 		x++;
-	} 
+	}
 	if (sign == 1)
 		return (-res);
 	else
-		return (res); 
-
-} 
+		return (res);
+}

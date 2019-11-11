@@ -6,16 +6,16 @@
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 17:26:03 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/07 12:04:06 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/11 19:22:12 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char*	ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int i;
-	char d;
+	int		i;
+	char	d;
 
 	d = (char)c;
 	i = 0;
@@ -25,5 +25,5 @@ char*	ft_strchr(const char *s, int c)
 			return ((char*)&s[i]);
 		i++;
 	}
-		return (0);
+	return (0);
 }
