@@ -18,7 +18,7 @@
 int		main(int argc, char**argv)
 {
 	argc = 0;
-	printf("%d\n", ft_atoi(argv[1]));
-	printf("%d\n", atoi(argv[1]));
+	ft_memset(argv[1], ft_atoi(argv[2]), ft_atoi(argv[3]));
+	memset(argv[1], atoi(argv[1]), atoi(argv[2]));
 	return (0);
 }
