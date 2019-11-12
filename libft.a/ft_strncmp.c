@@ -6,7 +6,7 @@
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 13:02:34 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/11 19:22:41 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/12 12:58:47 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int		ft_strncmp(const char *s1, const char *s2, int n)
 		return (s1[i] - s2[i]);
 	else if (s1[i] > s2[i] && s1[i] != s2[i])
 		return (s1[i] - s2[i]);
-	return (0);
+	else
+		return (0);
 }

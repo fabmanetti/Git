@@ -6,13 +6,13 @@
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:50:21 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/08 19:53:15 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/12 10:49:52 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_strlcpy(char *dst, const char *src, unsigned int size)
+unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int size)
 {
 	unsigned int i;
 

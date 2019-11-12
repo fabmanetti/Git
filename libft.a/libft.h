@@ -6,11 +6,18 @@
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 18:15:22 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/11 19:23:38 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/12 15:10:49 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 void	*ft_memset(void *s, int c, int len);
+void	ft_bzero(void *s, int n);
+void	*ft_memcpy(void *dst, const void *src, int n);
+void	*ft_memmove(void *dst, const void *src, int len);
+void	*ft_memchr(const void *s, int c, int len);
+int		ft_memcmp(const void *s1, const void *s2, int n);
 int		ft_strlen(const char *s);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -22,7 +29,7 @@ int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, int n);
-long	ft_strlcpy(char *dst, const char *src, unsigned int size);
+unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int size);
 unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size);
 char	*ft_strnstr(const char *s1, const char *s2, unsigned int len);
 int		ft_atoi(const char *s);
