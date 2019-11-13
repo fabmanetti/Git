@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 18:32:30 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/12 18:08:45 by fmanetti         ###   ########.fr       */
+/*   Created: 2019/11/13 19:57:35 by fmanetti          #+#    #+#             */
+/*   Updated: 2019/11/13 19:57:38 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
+
 #include "libft.h"
 
-int		main(int argc, const char *argv[])
+void    *ft_calloc(size_t count, size_t size)
 {
-	char	*str;
-
-	alarm(5);
-	if (argc == 1)
-		return (0);
-	else if (atoi(argv[1]) == 1)
-	{
-		str = (char *)ft_calloc(30, 1);
-		if (!str)
-			write(1, "NULL", 4);
-		else
-			write(1, str, 30);
-	}
-	return (0);
+    void *p;
+    int i;
+    
+    i = 0;
+    p = 0;
+    while (count--)
+    {
+        p = malloc(size * 40);
+        ft_memset( p, 0, size);
+        if (p == NULL)
+            return (0);  
+    }
+    return (p);
 }
