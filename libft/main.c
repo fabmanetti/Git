@@ -14,7 +14,7 @@
 #include <string.h>
 #include "libft.h"
 
-void	ft_print_result(const char *s)
+void	ft_print_result(char const *s)
 {
 	int		len;
 
@@ -26,70 +26,59 @@ void	ft_print_result(const char *s)
 
 int		main(int argc, const char *argv[])
 {
-	const char *str;
-	int			arg;
+	void	*mem;
+	void	*membis;
+	int		arg;
 
 	alarm(5);
-	if (argc == 1)
+	if (!(mem = malloc(sizeof(*mem) * 30)) || argc == 1)
 		return (0);
-	else if ((arg = atoi(argv[1])) == 1)
+	memset(mem, 'j', 29);
+	((char*)mem)[29] = '\0';
+	membis = mem;
+	if ((arg = atoi(argv[1])) == 1)
 	{
-		str = ft_memchr("bonjour", 'b', 4);
-		if (!str)
-			ft_print_result("NULL");
-		else
-			ft_print_result(str);
-	}
-	else if (arg == 2)
-	{
-		str = ft_memchr("bonjour", 'o', 7);
-		if (!str)
-			ft_print_result("NULL");
-		else
-			ft_print_result(str);
-	}
-	else if (arg == 3)
-	{
-		str = ft_memchr("bonjourno", 'n', 2);
-		if (!str)
-			ft_print_result("NULL");
-		else
-			ft_print_result(str);
-	}
-	else if (arg == 4)
-	{
-		str = ft_memchr("bonjour", 'j', 6);
-		if (!str)
-			ft_print_result("NULL");
-		else
-			ft_print_result(str);
-	}
-	else if (arg == 5)
-	{
-		str = ft_memchr("bonjour", 's', 7);
-		if (!str)
-			ft_print_result("NULL");
-		else
-			ft_print_result(str);
-	}
-	else if (arg == 6)
-	{
-		int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
-
-		printf("%s", ft_memchr(tab, -1, 7));
-	}
-	else if (arg == 7)
-	{
-		char *pouet = "z";
-		char *lolzer = (char *)&pouet[2];
-		lolzer = "aaaaaaaaaa";
-		str = ft_memchr(lolzer, 'a', 50);
-		if (!str)
+		if (!(mem = ft_memccpy(mem, "zyxwvutsrqponmlkjihgfedcba", 'r', 20)))
 			ft_print_result("NULL");
 		else
 		{
-			ft_print_result(str);
+			ft_print_result(mem);
+			write(1, "\n", 1);
+			ft_print_result(membis);
 		}
 	}
-       	return (0);
+	else if (arg == 2)
+	{
+		if (!(mem = ft_memccpy(mem, "zyxwvutsrqponmlkjihgfedcba", 'r', 3)))
+			ft_print_result("NULL");
+		else
+		{
+			ft_print_result(mem);
+			write(1, "\n", 1);
+			ft_print_result(membis);
+		}
+	}
+	else if (arg == 3)
+	{
+		if (!(mem = ft_memccpy(mem, "zyxwvutsrqponmlkjihgfedcba", 'a', 26)))
+			ft_print_result("NULL");
+		else
+		{
+			ft_print_result(mem);
+			write(1, "\n", 1);
+			ft_print_result(membis);
+		}
+	}
+	else if (arg == 4)
+	{
+		if (!(mem = ft_memccpy(mem, "zyxwvuzyxwvu", 'x', 20)))
+			ft_print_result("NULL");
+		else
+		{
+			ft_print_result(mem);
+			write(1, "\n", 1);
+			ft_print_result(membis);
+		}
+	}
+	return (0);
 }
