@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   main1.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 10:44:38 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/14 12:29:20 by fmanetti         ###   ########.fr       */
+/*   Created: 2019/11/14 15:22:38 by fmanetti          #+#    #+#             */
+/*   Updated: 2019/11/14 16:27:33 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int		main()
 {
-	int		y;
-	int		d;
-	int		i;
-	char	x;
+	char dst[10];
+	char *src = "ciao mama ";
 
-	i = 0;
-	y = 0;
-	d = 0;
-	x = (char)c;
-	while (s[i] != '\0')
-	{
-		if (s[i] == x)
-		{
-			d = i;
-			y++;
-		}
-		i++;
-	}
-	if (s[i] == x)
-		return ((char*)&s[i]);
-	if (d != 0 || s[0] == x)
-		return ((char*)s + d);
-	return (0);
+//	printf("%d\n", ft_strlcpy(dst, src, 10));
+	return 0;
 }

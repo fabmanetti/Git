@@ -6,7 +6,7 @@
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 18:32:30 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/12 18:08:45 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/14 19:17:10 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -14,20 +14,82 @@
 #include <string.h>
 #include "libft.h"
 
+void	ft_print_result(const char *s)
+{
+	int		len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
+}
+
 int		main(int argc, const char *argv[])
 {
-	char	*str;
+	const char *str;
+	int			arg;
 
 	alarm(5);
 	if (argc == 1)
 		return (0);
-	else if (atoi(argv[1]) == 1)
+	else if ((arg = atoi(argv[1])) == 1)
 	{
-		str = (char *)ft_calloc(30, 1);
+		str = ft_memchr("bonjour", 'b', 4);
 		if (!str)
-			write(1, "NULL", 4);
+			ft_print_result("NULL");
 		else
-			write(1, str, 30);
+			ft_print_result(str);
 	}
-	return (0);
+	else if (arg == 2)
+	{
+		str = ft_memchr("bonjour", 'o', 7);
+		if (!str)
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	else if (arg == 3)
+	{
+		str = ft_memchr("bonjourno", 'n', 2);
+		if (!str)
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	else if (arg == 4)
+	{
+		str = ft_memchr("bonjour", 'j', 6);
+		if (!str)
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	else if (arg == 5)
+	{
+		str = ft_memchr("bonjour", 's', 7);
+		if (!str)
+			ft_print_result("NULL");
+		else
+			ft_print_result(str);
+	}
+	else if (arg == 6)
+	{
+		int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
+
+		printf("%s", ft_memchr(tab, -1, 7));
+	}
+	else if (arg == 7)
+	{
+		char *pouet = "z";
+		char *lolzer = (char *)&pouet[2];
+		lolzer = "aaaaaaaaaa";
+		str = ft_memchr(pouet, 'a', 50);
+		if (!str)
+			ft_print_result("NULL");
+		else
+		{
+			ft_print_result(str);
+		}
+	}
+       	return (0);
 }
