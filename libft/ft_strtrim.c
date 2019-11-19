@@ -41,10 +41,11 @@ int		back_check(char const *s1, char const *set)
 	x = ft_strlen(s1) - 1;
 	y = ft_strlen(set) - 1;
 	z = 0;
-	while (s1[x] != '\0' && x >= (x - ft_strlen(set)))
+	while (s1[x] != '\0' && x >= (ft_strlen(s1) - ft_strlen(set)))
 	{
 		if (s1[x] == set[y])
 		{
+			x = ft_strlen(s1);
 			y--;
 			z++;
 		}
