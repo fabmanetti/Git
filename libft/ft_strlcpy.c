@@ -6,7 +6,7 @@
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:50:21 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/14 18:18:58 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/19 20:28:53 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t		x;
 	size_t		i;
 
-	if (!(dst))
+	if (!(dst || src))
 		return (0);
 	i = 0;
 	x = (size_t)(ft_strlen(src));

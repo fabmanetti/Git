@@ -6,7 +6,7 @@
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 17:50:16 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/18 14:29:31 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/19 21:42:19 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,67 +14,64 @@
 
 int		count_words(const char *s, char c)
 {
-	int		i;
 	int		x;
+	int		y;
 
-	i = 0;
 	x = 0;
-	while (s[i] != '\0')
+	y = 0;
+	while (s[x])
 	{
-		if (s[i] == c)
-			x++;
-		i++;
+		if (s[x] == c)
+			y++;
+		x++;
 	}
-	return (x);
+	return (y);
 }
 
-char	*fill_array(const char *s, char *t, char c, int y)
+char	*fill_array(const char *s, char c, char *t, int x)
 {
-	int		i;
-	int		x;
+	int		y;
+	int		z;
 
-	i = y;
-	x = 0;
-	i++;
-	while (s[i] != c && s[i] != '\0')
-		i++;
-	if (!(t = malloc(((i - y) + 1) * sizeof(char))))
-		return (0);
-	while (s[y] != '\0')
-	{
-		t[x] = s[y];
+	y = x;
+	z = 0;
+	while (s[x] != c)
 		x++;
+	if(!(t = malloc((x + 2) * sizeof(char))))
+		return (0);
+	while (z <= x && s[y] != '\0')
+	{
+		t[z] = s[y];
+		z++;
 		y++;
-		if (s[y] == c)
-		{
-			t[x] = '\0';
-			return (t);
-		}
 	}
+	t[z] = '\0';
 	return (t);
 }
 
 char	**ft_split(const char *s, char c)
 {
-	int		i;
 	int		x;
 	int		y;
+	int		z;
+	int		words;
 	char	**t;
 
-	i = 0;
+	x = 0;
 	y = 0;
-	t = NULL;
-	x = count_words(s, c);
-	if (!(t = malloc((x + 1) * sizeof(char*))))
+	z = 0;
+	words = count_words(s, c);
+	if (!(t = malloc((words + 1) * sizeof(char*))))
 		return (0);
-	while (i < x)
+	while (x < words)
 	{
-		t[i] = fill_array(s, t[i], c, y);
+		t[x] = fill_array(s, c, t[x], y);
+		if (x != words)
+			while (s[y] != c && s[y] != '\0')
+				y++;
+		x++;
 		y++;
-		while (s[y] != c)
-			y++;
-		i++;
 	}
-	t[i] = 0;
+	t[x] = NULL;
 	return (t);
 }

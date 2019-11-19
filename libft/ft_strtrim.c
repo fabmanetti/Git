@@ -6,7 +6,7 @@
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 16:13:29 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/18 20:26:30 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/19 19:32:40 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,18 @@ int		front_check(char const *s1, char const *set)
 	x = 0;
 	y = 0;
 	z = 0;
-	while (s1[x] != '\0' && x <= ft_strlen(set))
+	while (s1[x] != '\0')
 	{
-		if (s1[x] == set[y])
+		y = 0;
+		while (set[y] != s1[x] && set[y] != '\0')
 			y++;
-		if (s1[x] == ' ')
+		if (set[y] != '\0')
 			z++;
+		else
+			return (z);
 		x++;
 	}
-	return (y + z);
+	return (z);
 }
 
 int		back_check(char const *s1, char const *set)
@@ -39,41 +42,34 @@ int		back_check(char const *s1, char const *set)
 	int		z;
 
 	x = ft_strlen(s1) - 1;
-	y = ft_strlen(set) - 1;
+	y = 0;
 	z = 0;
-	while (s1[x] != '\0' && x >= (ft_strlen(s1) - ft_strlen(set)))
+	while (x > 0)
 	{
-		if (s1[x] == set[y])
-		{
-			x = ft_strlen(s1);
-			y--;
+		y = 0;
+		while (set[y] != s1[x] && set[y] != '\0')
+			y++;
+		if (set[y] != '\0')
 			z++;
-		}
-		if (s1[x] == ' ')
-			z++;
+		else
+			return (z);
 		x--;
 	}
 	return (z);
 }
 
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		x;
 	int		y;
-	int		z;
 	char	*s2;
 
-	x = front_check(s1, set);
-	y = back_check(s1, set);
-	z = 0;
-	if (!(s2 = malloc((ft_strlen(s1) - x - y + 1) * sizeof(char))))
+	if (!(s1))
 		return (0);
-	while (z < (ft_strlen(s1) - y))
-	{
-		s2[z] = s1[z + x];
-		z++;
-	}
-	s2[z] = '\0';
+	x = front_check(s1, set);
+	if (x == ft_strlen(s1))
+		return (ft_strdup(""));
+	y = back_check(s1, set);
+	s2 = ft_substr(s1, x, (ft_strlen(s1) - x - y));
 	return (s2);
 }

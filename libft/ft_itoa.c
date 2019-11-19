@@ -6,7 +6,7 @@
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:31:45 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/18 16:06:46 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/19 17:57:56 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ int		lenght(int n)
 	int		i;
 
 	i = 0;
-	if (n < 0)
+	if (n <= 0)
+	{
 		i++;
+		n *= -1;
+	}
 	while (n > 0)
 	{
 		n /= 10;
@@ -37,11 +40,10 @@ char	*ft_itoa(int n)
 		return (0);
 	s[i] = '\0';
 	i--;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	if (n == 0)
-	{
-		s[0] = 48;
-		return (s);
-	}
+		return (ft_strdup("0"));
 	if (n < 0)
 	{
 		s[0] = '-';
