@@ -12,7 +12,8 @@
 
 #include "libft.h"
 
-int		count_words(const char *s, char c)
+
+int		count_word(char const *s, char c)
 {
 	int		x;
 	int		y;
@@ -21,77 +22,97 @@ int		count_words(const char *s, char c)
 	y = 0;
 	while (s[x] != '\0')
 	{
-		if (s[x] != c)
+		if (s[x] == c)
+			while (s[x] == c && s[x] != '\0')
+				x++;
+		else
 		{
-		printf("0");
 			while (s[x] != c && s[x] != '\0')
 				x++;
 			y++;
 		}
-		if (s[x] == '\0')
-			x++;
 	}
-	//if (y != 0)
-	//	y++;
-	//printf("%d\n", y);
 	return (y);
 }
 
-char	*fill_array(const char *s, char c, char *t, int x)
+//void	free_all(char **t)
+//{
+//	return ;
+//}
+
+char	*fill_string(char const *s, char c, char *t, int y)
 {
-	int		y;
+	int		x;
 	int		z;
 	int		a;
 
-	a = x;
-	y = x;
+	x = y;
+	a = y;
 	z = 0;
-	while (s[y] != c && s[y] != '\0')
-		a++;
-	if(!(t = malloc(((a - x) + 2) * sizeof(char))))
+	if (s[y] == c)
+		x++;
+	while (s[x] != c && s[x] != '\0')
+		x++;
+	if (!(t = malloc((x - y + 1) * sizeof(char))))
 		return (0);
-	while (z < (a - x) && s[y] != '\0')
+	while (z < (x - y) && s[a] != '\0')
 	{
-		t[z] = s[y];
+		t[z] = s[a];
 		z++;
-		y++;
-		printf("2");
+		a++;
 	}
 	t[z] = '\0';
+	printf("%s\n", t);
 	return (t);
 }
 
-int		advancec(const char *s, char c, int x)
+int		set_y(char const *s, char c, int y)
 {
-	while (s[x] == c)
-		x++;
-	printf("3");
-	return (x);
+	int		x;
+	int		z;
+
+	x = 0;
+	z = 0;
+while (s[y] != '\0')
+	{
+		if (s[y] == c)
+			while (s[y] == c && s[y] != '\0')
+				y++;
+		else
+		{
+			while (s[x] != c && s[x] != '\0')
+				y++;
+			x++;
+		}
+	}
+
+
 }
 
-char	**ft_split(const char *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		x;
 	int		y;
-	int		z;
-	int		words;
+	int		wrd;
 	char	**t;
 
 	x = 0;
 	y = 0;
-	z = 0;
-	words = count_words(s, c);
-	if (!(t = malloc((words + 1) * sizeof(char*))))
+	t = NULL;
+	wrd = count_word(s, c);
+	if (!(t = malloc((wrd + 1) * sizeof(char*))))
 		return (0);
-	while (x < words)
+	while (x < wrd)
 	{
-		printf("1");
-		t[x] = fill_array(s, c, t[x], y);
-		if (x != words)
-			y = advancec(s, c, y);
+		t[x] = fill_string(s, c, t[x], y);
 		y++;
+		while (s[y] == c && s[y] != '\0')
+			y++;
+		while (s[y] != c && s[y] != '\0')
+			y++;
 		x++;
 	}
 	t[x] = NULL;
-	return (t);
+	return(t);
 }
+
