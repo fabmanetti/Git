@@ -6,7 +6,7 @@
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 16:13:29 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/21 15:13:48 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/21 15:18:18 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		y;
 	char	*s2;
 
-	if (!(s1 || set))
+	if (!s1 || !set)
 		return (0);
 	x = front_check(s1, set);
 	if (x == ft_strlen(s1))

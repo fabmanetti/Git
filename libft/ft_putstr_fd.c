@@ -6,7 +6,7 @@
 /*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 16:51:27 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/19 18:07:42 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/21 15:59:18 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int		x;
 
+	x = 0;
 	if (!s)
 		return ;
 	x = ft_strlen(s);
