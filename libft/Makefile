@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 17:50:17 by fmanetti          #+#    #+#              #
-#    Updated: 2019/11/15 18:18:58 by fmanetti         ###   ########.fr        #
+#    Updated: 2019/11/25 18:57:27 by fmanetti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,11 @@ OBJ = ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o \
 	ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o \
 	ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
 
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c
+
+OBJB = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o \
+ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o
 
 all: $(NAME) $(SOURCE)
 
@@ -36,8 +41,13 @@ $(NAME):
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
+bonus: fclean
+	gcc -c -Wall -Wextra -Werror $(SOURCE) $(BONUS)
+	ar rc $(NAME) $(OBJ) $(OBJB)
+	ranlib $(NAME)
+
 clean:
-	/bin/rm -f $(OBJ)
+	/bin/rm -f $(OBJ) $(OBJB)
 
 fclean: clean
 	/bin/rm -f $(NAME)
