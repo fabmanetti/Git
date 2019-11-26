@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/25 19:25:03 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/26 14:40:18 by fmanetti         ###   ########.fr       */
+/*   Created: 2019/11/26 16:59:14 by fmanetti          #+#    #+#             */
+/*   Updated: 2019/11/26 18:34:16 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*actual;
+	t_list	*lstnw;
+	t_list	*tmp;
 
-	if (!alst || !new)
-		return ;
-	actual = *alst;
-	if (*alst == NULL)
-		*alst = new;
-	else
+	if (!lst || !f)
+		return (NULL);
+	if (!(lstnw = ft_lstnew(f(lst))))
+		ft_lstdelone(lstnw, del);
+	tmp = lstnw;
+	while (lst != NULL)
 	{
-		while (actual->next != NULL)
-			actual = actual->next;
-		actual->next = new;
+		if (!(tmp->next = ft_lstnew(f(lst))))
+			ft_lstdelone(tmp->next, del);
+		tmp = tmp->next;
+		lst = lst->next;
 	}
+	return (lstnw);
 }
