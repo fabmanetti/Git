@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/26 16:59:14 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/26 18:34:16 by fmanetti         ###   ########.fr       */
+/*   Created: 2019/11/25 20:59:58 by fmanetti          #+#    #+#             */
+/*   Updated: 2019/11/27 13:15:16 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "bonus.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list	*lstnw;
-	t_list	*tmp;
-
-	if (!lst || !f)
-		return (NULL);
-	if (!(lstnw = ft_lstnew(f(lst))))
-		ft_lstdelone(lstnw, del);
-	tmp = lstnw;
-	while (lst != NULL)
-	{
-		if (!(tmp->next = ft_lstnew(f(lst))))
-			ft_lstdelone(tmp->next, del);
-		tmp = tmp->next;
-		lst = lst->next;
-	}
-	return (lstnw);
+	if (!lst)
+		return ;
+	del(lst->content);
+	lst = lst->next;
+	free(lst);
 }

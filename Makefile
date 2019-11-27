@@ -6,7 +6,7 @@
 #    By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 17:50:17 by fmanetti          #+#    #+#              #
-#    Updated: 2019/11/26 17:19:57 by fmanetti         ###   ########.fr        #
+#    Updated: 2019/11/27 13:17:59 by fmanetti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,13 +28,17 @@ OBJ = ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o \
 	ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o \
 	ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
 
-BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-ft_lstmap.c
+BONUS = bonus/ft_lstnew_bonus.c bonus/ft_lstadd_front_bonus.c \
+bonus/ft_lstsize_bonus.c bonus/ft_lstlast_bonus.c \
+bonus/ft_lstadd_back_bonus.c bonus/ft_lstdelone_bonus.c \
+bonus/ft_lstclear_bonus.c bonus/ft_lstiter_bonus.c \
+bonus/ft_lstmap_bonus.c
 
-OBJB = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o \
-ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o \
-ft_lstmap.o
+OBJB = ft_lstnew_bonus.o ft_lstadd_front_bonus.o \
+ft_lstsize_bonus.o ft_lstlast_bonus.o \
+ft_lstadd_back_bonus.o ft_lstdelone_bonus.o \
+ft_lstclear_bonus.o ft_lstiter_bonus.o \
+ft_lstmap_bonus.o
 
 all: $(NAME) $(SOURCE)
 

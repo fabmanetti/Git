@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/25 18:48:39 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/25 19:24:38 by fmanetti         ###   ########.fr       */
+/*   Created: 2019/11/25 19:25:03 by fmanetti          #+#    #+#             */
+/*   Updated: 2019/11/27 13:15:13 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "bonus.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
 	t_list	*actual;
 
-	if (!lst)
-		return (NULL);
-	actual = lst;
-	while ((actual->next) != NULL)
-		actual = actual->next;
-	return (actual);
+	if (!alst || !new)
+		return ;
+	actual = *alst;
+	if (*alst == NULL)
+		*alst = new;
+	else
+	{
+		while (actual->next != NULL)
+			actual = actual->next;
+		actual->next = new;
+	}
 }
