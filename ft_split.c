@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 17:50:16 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/21 14:46:44 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/28 11:33:55 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		count_word(char const *s, char c)
+static int		count_word(char const *s, char c)
 {
 	int		x;
 	int		y;
@@ -34,7 +34,7 @@ int		count_word(char const *s, char c)
 	return (y);
 }
 
-char	*fill_string(char const *s, char c, char *t, int y)
+static char		*fill_string(char const *s, char c, char *t, int y)
 {
 	int		x;
 	int		z;
@@ -61,7 +61,7 @@ char	*fill_string(char const *s, char c, char *t, int y)
 	return (t);
 }
 
-int		set_y(char const *s, char c, int y, int z)
+static int		set_y(char const *s, char c, int y, int z)
 {
 	int		x;
 
@@ -86,7 +86,7 @@ int		set_y(char const *s, char c, int y, int z)
 	return (y++);
 }
 
-int		free_all(char **t, int x)
+static int		free_all(char **t, int x)
 {
 	while (x)
 	{
@@ -98,7 +98,7 @@ int		free_all(char **t, int x)
 	return (0);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	int		x;
 	int		y;

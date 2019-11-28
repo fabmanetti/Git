@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 13:40:12 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/14 16:52:29 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/28 16:45:48 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ int		ft_atoi(const char *s)
 	x = 0;
 	c = 0;
 	res = 0;
+	sign = 1;
 	while (s[x] == ' ' || (s[x] >= 8 && s[x] <= 13))
 		x++;
 	if (s[x] == '-')
-		sign = 1;
+		sign *= -1;
 	while (s[x + c] == '+' || s[x + c] == '-')
 		c++;
 	while (s[x + c] >= '0' && s[x + c] <= '9')
@@ -36,7 +37,5 @@ int		ft_atoi(const char *s)
 	}
 	if (c > 1)
 		return (0);
-	else if (sign == 1)
-		return (-res);
-	return (res);
+	return (res * sign);
 }

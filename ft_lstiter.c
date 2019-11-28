@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/25 18:48:39 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/27 13:15:17 by fmanetti         ###   ########.fr       */
+/*   Created: 2019/11/26 16:49:48 by fmanetti          #+#    #+#             */
+/*   Updated: 2019/11/28 12:25:05 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*actual;
-
 	if (!lst)
-		return (NULL);
-	actual = lst;
-	while ((actual->next) != NULL)
-		actual = actual->next;
-	return (actual);
+		return ;
+	while (lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:31:45 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/19 17:57:56 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/28 11:46:08 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		lenght(int n)
+static int		lenght(int n)
 {
 	int		i;
 
@@ -30,7 +30,7 @@ int		lenght(int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int		i;
 	char	*s;

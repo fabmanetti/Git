@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/26 16:59:14 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/27 13:15:18 by fmanetti         ###   ########.fr       */
+/*   Created: 2019/11/25 17:23:38 by fmanetti          #+#    #+#             */
+/*   Updated: 2019/11/28 16:08:37 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	t_list	*lstnw;
-	t_list	*tmp;
-
-	if (!lst || !f)
-		return (NULL);
-	if (!(lstnw = ft_lstnew(f(lst))))
-		ft_lstdelone(lstnw, del);
-	tmp = lstnw;
-	while (lst != NULL)
-	{
-		if (!(tmp->next = ft_lstnew(f(lst))))
-			ft_lstdelone(tmp->next, del);
-		tmp = tmp->next;
-		lst = lst->next;
-	}
-	return (lstnw);
+	if (!alst || !new)
+		return ;
+	new->next = *alst;
+	*alst = new;
 }

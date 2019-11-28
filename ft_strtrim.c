@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmanetti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 16:13:29 by fmanetti          #+#    #+#             */
-/*   Updated: 2019/11/21 15:18:18 by fmanetti         ###   ########.fr       */
+/*   Updated: 2019/11/28 11:34:38 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		front_check(char const *s1, char const *set)
+static int		front_check(char const *s1, char const *set)
 {
 	int		x;
 	int		y;
@@ -35,7 +35,7 @@ int		front_check(char const *s1, char const *set)
 	return (z);
 }
 
-int		back_check(char const *s1, char const *set)
+static int		back_check(char const *s1, char const *set)
 {
 	int		x;
 	int		y;
@@ -58,7 +58,7 @@ int		back_check(char const *s1, char const *set)
 	return (z);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	int		x;
 	int		y;
