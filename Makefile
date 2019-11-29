@@ -6,7 +6,7 @@
 #    By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 17:50:17 by fmanetti          #+#    #+#              #
-#    Updated: 2019/11/28 16:20:40 by fmanetti         ###   ########.fr        #
+#    Updated: 2019/11/29 12:26:36 by fmanetti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,3 +80,5 @@ fclean: clean
 	/bin/rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all bonus clean fclean re
