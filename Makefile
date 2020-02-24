@@ -6,7 +6,7 @@
 #    By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 17:50:17 by fmanetti          #+#    #+#              #
-#    Updated: 2019/11/29 12:26:36 by fmanetti         ###   ########.fr        #
+#    Updated: 2020/02/12 18:23:35 by fmanetti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,12 @@ SOURCE = ft_memset.c \
 		ft_split.c \
 		ft_itoa.c \
 		ft_strmapi.c \
+		ft_putchar.c \
 		ft_putchar_fd.c \
+		ft_putstr.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
+		ft_putnbr.c \
 		ft_putnbr_fd.c 
 
 BONUS = ft_lstnew.c \
@@ -55,7 +58,7 @@ BONUS = ft_lstnew.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
-		ft_lstmap.c
+		ft_lstmap.c 
 
 OBJ			= $(SOURCE:%.c=%.o)
 
