@@ -6,7 +6,7 @@
 #    By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 17:50:17 by fmanetti          #+#    #+#              #
-#    Updated: 2020/04/24 12:32:05 by fmanetti         ###   ########.fr        #
+#    Updated: 2020/04/24 12:48:03 by fmanetti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,7 @@ bonus: $(OBJB)
 
 clean:
 	@/bin/rm -f $(OBJ) $(OBJB)
+	@printf "\033[0;31mObject files removed\n\033[0m"
 
 fclean: clean
 	@/bin/rm -f $(NAME)
