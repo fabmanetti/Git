@@ -6,7 +6,7 @@
 /*   By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 17:07:08 by fmanetti          #+#    #+#             */
-/*   Updated: 2021/04/15 11:17:32 by fmanetti         ###   ########.fr       */
+/*   Updated: 2021/04/15 11:25:03 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	ft_print_array_i(int *a, size_t size)
 	int		x;
 
 	x = 0;
-	while (x < size)
+	while (x < (int)size)
 	{
 		ft_putstr("a");
 		ft_putchar('[');
 		ft_putnbr(x);
 		ft_putchar(']');
 		ft_putstr(" = |");
-		ft_putstr(a[x++]);
+		ft_putnbr(a[x++]);
 		ft_putstr("|\n");
 	}
 }

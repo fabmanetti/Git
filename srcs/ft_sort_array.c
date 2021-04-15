@@ -6,7 +6,7 @@
 /*   By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 12:57:43 by fmanetti          #+#    #+#             */
-/*   Updated: 2021/04/15 11:15:22 by fmanetti         ###   ########.fr       */
+/*   Updated: 2021/04/15 11:25:24 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int			*ft_sort_array_i(int *a, size_t size)
 	int		x;
 
 	x = 0;
-	while ((x + 1) < size)
+	while ((x + 1) < (int)size)
 		if (a[x] > a[x + 1])
 		{
 			ft_swap(&(a[x]), &(a[x + 1]));
