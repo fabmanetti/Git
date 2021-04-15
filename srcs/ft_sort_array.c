@@ -6,18 +6,18 @@
 /*   By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 12:57:43 by fmanetti          #+#    #+#             */
-/*   Updated: 2021/04/13 17:13:15 by fmanetti         ###   ########.fr       */
+/*   Updated: 2021/04/15 11:15:22 by fmanetti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			*ft_sort_array_i(int *a)
+int			*ft_sort_array_i(int *a, size_t size)
 {
 	int		x;
 
 	x = 0;
-	while (a[x + 1])
+	while ((x + 1) < size)
 		if (a[x] > a[x + 1])
 		{
 			ft_swap(&(a[x]), &(a[x + 1]));
