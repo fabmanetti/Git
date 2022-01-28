@@ -98,27 +98,41 @@ FSANITIZE		= 	-g3 -O0 -fsanitize=address
 
 RED				=	\033[0;31m
 GREEN			=	\033[0;32m
-NO_COLOR		=	\033[0m
+RESET			=	\033[0m
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADERS)
+	@printf "[ $(NAME) ] Creating...\r"
 	@ar rc $(NAME) $^
 	@ranlib $(NAME)
-	@printf "[ $(NAME) ] Created $(GREEN)Successfully\n$(NO_COLOR)" $(SUCCESS)
+	@printf "$(GREEN)"
+	@printf " ___        __         ___  __       \n"
+	@printf "/\_ \    __/\ \      /'___\/\ \__    \n"
+	@printf "\//\ \  /\_\ \ \____/\ \__/\ \ ,_\   \n"
+	@printf "  \ \ \ \/\ \ \ '__'\ \ ,__\\ \ \/   \n"
+	@printf "   \_\ \_\ \ \ \ \_\ \ \ \_/ \ \ \_  \n"
+	@printf "   /\____\\\\\ \_\ \_,__/\ \_\   \ \__\ \n"
+	@printf "   \/____/ \/_/\/___/  \/_/    \/__/ \n"
+	@printf "$(RESET)"
+	@printf " ___         __                     _   _   _  \n"
+	@printf "| _ )_  _   / _|_ __  __ _ _ _  ___| |_| |_(_) \n"
+	@printf "| _ \ || | |  _| '  \/ _' | ' \/ -_)  _|  _| | \n"
+	@printf "|___/\_, | |_| |_|_|_\__,_|_||_\___|\__|\__|_| \n"
+	@printf "     |__/                                      \n"
 
 bonus: all $(OBJB)
 	@ar rc $(NAME) $(OBJB)
 	@ranlib $(NAME)
-	@printf "[ $(NAME) + bonus ] Created $(GREEN)Successfully\n$(NO_COLOR)" $(SUCCESS)
+	@printf "[ $(NAME) + bonus ] Created $(GREEN)Successfully\n$(RESET)" $(SUCCESS)
 
 clean:
 	@/bin/rm -f $(OBJ) $(OBJB)
-	@printf "Object files $(RED)removed\n$(NO_COLOR)"
+	@printf "Object files $(RED)removed\n$(RESET)"
 
 fclean: clean
 	@/bin/rm -f $(NAME)
-	@printf "[ $(NAME) ] $(RED)removed\n$(NO_COLOR)"
+	@printf "[ $(NAME) ] $(RED)removed\n$(RESET)"
 
 re: fclean all
 
