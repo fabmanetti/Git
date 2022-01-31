@@ -1,6 +1,11 @@
-# libft
+# libft 100% ✅
 
-![image](https://i.ibb.co/QffTzWz/image.png)
+- 42cursus - 2019-2020
+- Author = fmanetti
+- Result = 107%
+- Closed = 29 / 11 / 2019
+
+![image](./image.png)
 
 ## Description
 
@@ -22,27 +27,30 @@ helpful since you will use it in your next C school assignments.
 
 ## Libc Functions
 
-- [x] isalpha
-- [x] isdigit
-- [x] isalnum
-- [x] isascii
-- [x] isprint
-- [x] strlen
 - [x] memset
 - [x] bzero
 - [x] memcpy
+- [x] memccpy
 - [x] memmove
-- [x] strlcpy
-- [x] strlcat
-- [x] toupper
-- [x] tolower
-- [x] strchr
-- [x] strrchr
-- [x] strncmp
 - [x] memchr
 - [x] memcmp
-- [x] strnstr
+- [x] strlen 
+- [x] isalpha 
+- [x] isdigit 
+- [x] isalnum 
+- [x] isascii 
+- [x] isprint
+- [x] toupper 
+- [x] tolower 
+- [x] strchr 
+- [x] strrchr 
+- [x] strncmp 
+- [x] strlcpy 
+- [x] strlcat 
+- [x] strnstr 
 - [x] atoi
+- [x] calloc 
+- [x] strdup
 
 ## Additional functions
 
@@ -55,14 +63,20 @@ helpful since you will use it in your next C school assignments.
 - [x] ft_putchar_fd
 - [x] ft_putstr_fd
 - [x] ft_putendl_fd
-- [x] ft_putnbr_fd 
+- [x] ft_putnbr_fd
+
+## Bonus functions
+
+- [x] ft_lstnew
+- [x] ft_lstadd_front
+- [x] ft_lstsize
+- [x] ft_lstlast
+- [x] ft_lstadd_back
+- [x] ft_lstdelone
+- [x] ft_lstclear
+- [x] ft_lstiter
+- [x] ft_lstmap
 
 ## Sources
 
-* [Beej's Guide to Network Programming](http://beej.us/guide/bgnet/html/)
-* [Tutorial: How To Make An IRC Server Connection](https://oramind.com/tutorial-how-to-make-an-irc-server-connection/)
-* [ircgod](https://ircgod.com/)
-* [Internet Relay Chat: Server Protocol](https://www.irchelp.org/protocol/rfc/rfc2813.txt)
-* [How sockets work](https://www.ibm.com/docs/en/i/7.2?topic=programming-how-sockets-work)
-* [Internet Relay Chat: Client Protocol used by irssi](https://datatracker.ietf.org/doc/html/rfc1459)
-* [The UChicago χ-Projects: chirc](http://chi.cs.uchicago.edu/chirc/irc.html)
+* [man](https://man7.org/)
