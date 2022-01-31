@@ -1,4 +1,4 @@
-# libft 100% ✅
+# libft ✅
 
 - 42cursus - 2019-2020
 - Author = fmanetti
