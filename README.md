@@ -1,8 +1,8 @@
 # libft ✅
 
-42cursus - 2019-2020
-Author = fmanetti
-Result = 107%
+* 42cursus - 2019-2020
+* Author = fmanetti
+* Result = 107%
 
 ![image](./image.png)
 
