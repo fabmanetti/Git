@@ -1,9 +1,8 @@
 # libft ✅
 
-- 42cursus - 2019-2020
-- Author = fmanetti
-- Result = 107%
-- Closed = 29 / 11 / 2019
+42cursus - 2019-2020
+Author = fmanetti
+Result = 107%
 
 ![image](./image.png)
 
