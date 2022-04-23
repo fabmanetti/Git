@@ -3,10 +3,12 @@
 </h1>
 
 <p align="center">
-	<b><i>YOUR VERY FIRST OWN LIBRARY</i></b><br>
+	<b><i>CURSUS: 2019 - AUTHOR: fmanetti - GRADE: 107 - FINISHED: 29/11/2019</i></b><br>
 </p>
 
-### This project is about coding a C library. It will contain a lot of general purpose functions your programs will rely upon.
+<p align="center">
+	This project is about coding a C library. It will contain a lot of general purpose functions your programs will rely upon.
+</p>
 
 ![image](https://github.com/manettifabrizio/42cursus_srcs/blob/main/images/libft.gif)
 
