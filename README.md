@@ -19,11 +19,11 @@ standard functions. This project is about understanding the way these functions 
 implementing and learning to use them. Your will create your own library. It will be
 helpful since you will use it in your next C school assignments.
 
-For more detailed information, look at the [**subject of this project**](https://github.com/manettifabrizio/42cursus_srcs/blob/main/subjects/libft/fr.subject_11_2019.pdf).
+For more detailed information, look at the [**subject of this project**](https://github.com/manettifabrizio/42cursus_srcs/tree/main/subjects/libft).
 
 ### Disclaimer
 
-At 42 school when we program in C we are subject to a set of rules called [**the norm**](), so if the code is not 100% optimized this is the reason. This project was coded following norminette v2.
+At 42 school when we program in C we are subject to a set of rules called [**the norm**](https://github.com/manettifabrizio/42cursus_srcs/blob/main/subjects/norm/en.norme_v2.pdf), so if the code is not 100% optimized this is the reason. This project was coded following norminette v2.
 
 ## List of functions:
 
