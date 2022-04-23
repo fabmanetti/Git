@@ -6,18 +6,15 @@
 #    By: fmanetti <fmanetti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 17:50:17 by fmanetti          #+#    #+#              #
-#    Updated: 2021/04/13 16:05:01 by fmanetti         ###   ########.fr        #
+#    Updated: 2022/04/23 18:28:37 by fmanetti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	libft.a
 
-FILES			=	ft_arrlen.c			\
-					ft_atof.c			\
-					ft_atoi.c			\
+FILES			=	ft_atoi.c			\
 					ft_bzero.c			\
 					ft_calloc.c			\
-					ft_free_array.c		\
 					ft_isalnum.c		\
 					ft_isalpha.c		\
 					ft_isascii.c		\
@@ -25,16 +22,12 @@ FILES			=	ft_arrlen.c			\
 					ft_isprint.c		\
 					ft_isspace.c		\
 					ft_itoa.c			\
-					ft_memalloc.c		\
 					ft_memccpy.c		\
 					ft_memchr.c			\
 					ft_memcmp.c			\
 					ft_memcpy.c			\
-					ft_memdel.c			\
 					ft_memmove.c		\
 					ft_memset.c			\
-					ft_merge.c			\
-					ft_print_array.c	\
 					ft_putchar.c		\
 					ft_putchar_fd.c		\
 					ft_putendl_fd.c		\
@@ -42,7 +35,6 @@ FILES			=	ft_arrlen.c			\
 					ft_putnbr_fd.c		\
 					ft_putstr.c			\
 					ft_putstr_fd.c		\
-					ft_sort_array.c		\
 					ft_split.c			\
 					ft_strcat.c			\
 					ft_strchr.c			\
@@ -50,8 +42,6 @@ FILES			=	ft_arrlen.c			\
 					ft_strcpy.c			\
 					ft_strdup.c			\
 					ft_strjoin.c		\
-					ft_strjoin_nl.c		\
-					ft_strjoin_ln.c		\
 					ft_strlcat.c		\
 					ft_strlcpy.c		\
 					ft_strlen.c			\
@@ -64,10 +54,8 @@ FILES			=	ft_arrlen.c			\
 					ft_strstr.c			\
 					ft_strtrim.c		\
 					ft_substr.c			\
-					ft_swap.c			\
 					ft_tolower.c		\
-					ft_toupper.c		\
-					get_next_line.c
+					ft_toupper.c
 FILES_PATH		=	./srcs/
 
 BFILES			=	ft_lstnew.c			\
@@ -81,10 +69,25 @@ BFILES			=	ft_lstnew.c			\
 					ft_lstmap.c
 BFILES_PATH		=	./srcs_bonus/
 
+CFILES			=	ft_arrlen.c			\
+					ft_atof.c			\
+					ft_free_array.c		\
+					ft_memalloc.c		\
+					ft_memdel.c			\
+					ft_merge.c			\
+					ft_print_array.c	\
+					ft_sort_array.c		\
+					ft_strjoin_ln.c		\
+					ft_strjoin_nl.c		\
+					ft_swap.c			\
+					get_next_line.c
+CFILES_PATH		=	./srcs_custom/
+
 HFILES			=	libft.h
 HFILES_PATH		=	./
 
-SOURCE			=	$(addprefix $(FILES_PATH), $(FILES))
+CSOURCE			=	$(addprefix $(CFILES_PATH), $(CFILES))
+SOURCE			=	$(addprefix $(FILES_PATH), $(FILES)) $(CSOURCE)
 BSOURCE			=	$(addprefix $(BFILES_PATH), $(BFILES))
 HEADERS			=	$(addprefix $(HFILES_PATH), $(HFILES))
 
