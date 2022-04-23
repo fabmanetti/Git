@@ -8,7 +8,7 @@
 
 ### This project is about coding a C library. It will contain a lot of general purpose functions your programs will rely upon.
 
-![image](42_cursus_srcs/images/libft)
+![image](https://github.com/manettifabrizio/42cursus_srcs/blob/main/images/libft.gif)
 
 ## Introduction
 
